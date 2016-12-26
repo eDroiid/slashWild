@@ -22,23 +22,23 @@ class Wild extends PluginBase implements Listener {
 		switch(strtolower($cmd->getName())) {
 		
 			case "wild":
-				if($sender->hasPermission("wild")) {
+				if($sender->hasPermission("slashWild.command.wild")) {
 					if($sender instanceof Player) {
 						
-						$x = rand(1,350000);
+						$x = rand(1,350000);//max i was able to tp without lagging and stuff
 						$y = 128;
 						$z = rand(1,350000);
 						
 						$sender->teleport(new Position($x,$y,$z));
 						$sender->sendTip("WILD");
-						 
+						$sender->sendMessage("[slashWild] teleported to: X-".$x." Y-".$y." Z-".$z);
 					}
 					else {
-						$sender->sendMessage("Only in-game!");
+						$sender->sendMessage("[slashWild] Only in-game!");
 					}
 				}
 				else {
-					$sender->sendMessage("You have no permission to use this command!");
+					$sender->sendMessage("[slashWild] You have no permission to use this command!");
 				}
 				return true;
 			break;
