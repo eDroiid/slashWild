@@ -9,7 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\level\{Level,Position};
-use pocketmine\math\Vector3
+use pocketmine\math\Vector3;
 
 class Wild extends PluginBase implements Listener {
 	
