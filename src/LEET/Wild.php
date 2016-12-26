@@ -8,7 +8,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Server;
 use pocketmine\Player;
-use pocketmine\level\{Level,Position};
+use pocketmine\level\{Level,Position,ChunkManager};
 use pocketmine\math\Vector3;
 
 class Wild extends PluginBase implements Listener {
@@ -25,10 +25,18 @@ class Wild extends PluginBase implements Listener {
 				if($sender->hasPermission("slashWild.command.wild")) {
 					if($sender instanceof Player) {
 						
-						$x = rand(1,350000);//max i was able to tp without lagging and stuff
-						$y = 128;
+						$x = rand(1,350000);
 						$z = rand(1,350000);
-						
+						for($i = 0; $i < 128; $i++){
+							if(ChunkManager::getBlockIdAt($x, $i, $z) === 0){
+								if(ChunkManager::getBlockIdAt($x, $i+1, $z) === 0){
+									$y = $i;
+								}
+							}
+						}
+						if(!isset($y)){
+							$y = 128;	
+						}
 						$sender->teleport(new Position($x,$y,$z));
 						$sender->sendTip("WILD");
 						$sender->sendMessage("[slashWild] teleported to: X-".$x." Y-".$y." Z-".$z);
