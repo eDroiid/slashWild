@@ -28,8 +28,8 @@ class Wild extends PluginBase implements Listener {
 						$x = rand(1,350000);
 						$z = rand(1,350000);
 						for($i = 0; $i < 128; $i++){
-							if(ChunkManager::getBlockIdAt($x, $i, $z) === 0){
-								if(ChunkManager::getBlockIdAt($x, $i+1, $z) === 0){
+							if(ChunkManager->getBlockIdAt($x, $i, $z) === 0){
+								if(ChunkManager->getBlockIdAt($x, $i+1, $z) === 0){
 									$y = $i;
 								}
 							}
