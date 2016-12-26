@@ -25,9 +25,9 @@ class Wild extends PluginBase implements Listener {
 				if($sender->hasPermission("wild")) {
 					if($sender instanceof Player) {
 						
-						$x = rand(1,999);
+						$x = rand(1,350000);
 						$y = 128;
-						$z = rand(1,999);
+						$z = rand(1,350000);
 						
 						$sender->teleport(new Position($x,$y,$z));
 						$sender->sendTip("WILD");
