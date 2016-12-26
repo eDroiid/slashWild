@@ -1,7 +1,7 @@
 name: slashWild
 main: LEET\Wild
 version: 1.0dev
-api: [2.0.0, 2.1.0]
+api: [2.0.0, 2.1.0, 3.0.0]
 load: STARTUP
 author: eDroid and RTGNetworkkk
 description: slashWild, a new and improved way to be teleported somewhere wild
@@ -9,7 +9,7 @@ description: slashWild, a new and improved way to be teleported somewhere wild
 commands:
  wild:
   aliases: [tprandom]
-  description: do /wild and be teleported somewhere wild
+  description: teleport somewhere random and wild!
   permission: slashWild.command.wild
 
 permissions:
