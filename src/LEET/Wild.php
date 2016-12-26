@@ -15,6 +15,7 @@ class Wild extends PluginBase implements Listener {
 	
 	public function onEnable() {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->getLogger()->info("slashWild is enabled!");
 	}
 	
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $param ) {
@@ -46,6 +47,7 @@ class Wild extends PluginBase implements Listener {
 	}
 	
 	public function onDisable() {
+		$this->getLogger()->info("slashWild has been disabled!");
 	}
 	
 }
