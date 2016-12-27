@@ -24,19 +24,12 @@ class Wild extends PluginBase implements Listener {
 			case "wild":
 				if($sender->hasPermission("slashWild.command.wild")) {
 					if($sender instanceof Player) {
-						
+						if($this->isFall){
+							$this->dgmev->setCancelled();
+						}
 						$x = rand(1,350000);
+						$y = 128;
 						$z = rand(1,350000);
-						for($i = 0; $i < 128; $i++){
-							if(ChunkManager->getBlockIdAt($x, $i, $z) === 0){
-								if(ChunkManager->getBlockIdAt($x, $i+1, $z) === 0){
-									$y = $i;
-								}
-							}
-						}
-						if(!isset($y)){
-							$y = 128;	
-						}
 						$sender->teleport(new Position($x,$y,$z));
 						$sender->sendTip("WILD");
 						$sender->sendMessage("[slashWild] teleported to: X-".$x." Y-".$y." Z-".$z);
@@ -53,7 +46,10 @@ class Wild extends PluginBase implements Listener {
 		
 		}
 	}
-	
+	public function onDamage(EntityDamageEvent $ev){
+		$this->dmgev = $ev;
+    		$this->isFall = $ev->getCause() === EntityDamageEvent::CAUSE_FALL;
+	}
 	public function onDisable() {
 		$this->getLogger()->info("slashWild has been disabled!");
 	}
