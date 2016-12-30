@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/eDroiid/slashWild
+branches:
+- master
+projects:
+  slashWild:
+    path: ""
+...
