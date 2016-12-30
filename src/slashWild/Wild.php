@@ -1,6 +1,6 @@
 <?php
 
-namespace LEET;
+namespace slashWild;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
