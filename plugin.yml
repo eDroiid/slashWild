@@ -1,7 +1,7 @@
 name: slashWild
 main: slashWild\Wild
 version: 1.0dev
-api: [2.1.0]
+api: [3.0.0-ALPHA3]
 load: STARTUP
 author: eDroid and RTGNetworkkk
 description: slashWild, a new and improved way to be teleported somewhere wild
